@@ -28,4 +28,6 @@ public class Movie implements Serializable {
 
     private String urlStream;
 
+    public Movie(Object o, String s, String terror, String s1) {
+    }
 }

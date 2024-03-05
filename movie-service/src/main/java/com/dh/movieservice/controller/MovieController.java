@@ -2,11 +2,13 @@ package com.dh.movieservice.controller;
 
 import com.dh.movieservice.model.Movie;
 import com.dh.movieservice.service.MovieService;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RefreshScope
 @RestController
 @RequestMapping("/api/v1/movies")
 public class MovieController {

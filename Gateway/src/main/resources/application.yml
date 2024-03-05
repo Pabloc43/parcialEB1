@@ -1,20 +1,21 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8080
 
 spring:
   application:
-    name: movie-service
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3366/movie-dev
-    username: usr-movie
-    password: pwd-movie
-  jpa:
-    hibernate.ddl-auto: update
-    generate-ddl: true
-    show-sql: true
+    name: gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: catalog-service
+            uri: lb://catalog-service/
+            predicates:
+              - Path=/catalog/**
 
-message: "hello world"
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
 
 eureka:
   client:
