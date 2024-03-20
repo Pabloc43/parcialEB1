@@ -5,39 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7887a0ee-03dd-4742-886f-9712506bffff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/src/main/java/com/example/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/src/test/java/com/example/configserver/ConfigServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/configuration/CustomLoadBalancerConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/Client/IMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/Client/IMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/Controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/com/dh/catalogservice/Controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/src/main/java/com/example/eurekaserver/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eurekaserver/EurekaServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/src/test/java/com/example/eurekaserver/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eurekaserver/EurekaServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,8 +67,8 @@
     "last_opened_file_path": "/home/aguekdjian/EB1/Primer_Parcial_PabloCamejo_AnthonyGuekdjian/configserver"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Catalog">
-    <configuration name="Catalog" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.Movie">
+    <configuration name="Catalog" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.dh.catalogservice.CatalogServiceApplication" />
@@ -134,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Movie" type="Application" factoryName="Application">
+    <configuration name="Movie" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.dh.movieservice.MovieServiceApplication" />
