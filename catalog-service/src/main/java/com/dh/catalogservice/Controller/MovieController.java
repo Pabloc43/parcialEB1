@@ -24,7 +24,6 @@ public class MovieController {
 
     private static final Logger logger = LoggerFactory.getLogger(MovieController.class);
 
-
     @GetMapping("/prueba")
     public String prueba(){
         return "prueba";
