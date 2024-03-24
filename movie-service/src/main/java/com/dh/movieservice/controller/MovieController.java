@@ -18,6 +18,11 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+    @GetMapping
+    public List<Movie> getAll() {
+        return movieService.getAll();
+    }
+
     @GetMapping("/{genre}")
     ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
         return ResponseEntity.ok().body(movieService.findByGenre(genre));

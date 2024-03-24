@@ -1,8 +1,10 @@
 package com.dh.catalogservice.Controller;
 
-import com.dh.catalogservice.Client.IMovie;
+import com.dh.catalogservice.feign.IMovie;
 import com.dh.catalogservice.Model.DTO.Movie;
+import com.dh.catalogservice.Model.DTO.Serie;
 
+import com.dh.catalogservice.feign.ISerie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class MovieController {
 
     @Autowired
     private IMovie movieClient;
+    @Autowired
+    private ISerie serieClient;
 
     private static final Logger logger = LoggerFactory.getLogger(MovieController.class);
 
@@ -28,17 +32,39 @@ public class MovieController {
     public String prueba(){
         return "prueba";
     }
-    @GetMapping("/{genre}")
+    @GetMapping("/movie/{genre}")
     public ResponseEntity<List<Movie>> getMoviesByGenre(@PathVariable String genre) {
         return movieClient.getMovieByGenre(genre);
 
     }
 
-    @PostMapping("/save")
+    @PostMapping("/movie/save")
     public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie){
         return movieClient.saveMovie(movie);
     }
 
+    @GetMapping("/movie")
+    public ResponseEntity<List<Movie>> getAllMovies() {
+        return movieClient.getAll();
+    }
 
+    @GetMapping("/serie/test")
+    public ResponseEntity<String> test(){
+        return serieClient.test();
+    }
 
+    @GetMapping("/serie")
+    public ResponseEntity<List<Serie>> getAllSeries() {
+        return serieClient.getAll();
+    }
+
+    @GetMapping("/serie/{genre}")
+    public ResponseEntity<List<Serie>> getSeriesByGenre(@PathVariable String genre) {
+        return serieClient.getSerieByGenre(genre);
+    }
+
+    @PostMapping("/serie/save")
+    public ResponseEntity<Serie> create(@RequestBody Serie serie){
+        return serieClient.create(serie);
+    }
 }

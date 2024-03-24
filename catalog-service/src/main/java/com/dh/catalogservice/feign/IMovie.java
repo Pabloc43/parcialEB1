@@ -1,5 +1,4 @@
-package com.dh.catalogservice.Client;
-
+package com.dh.catalogservice.feign;
 
 import com.dh.catalogservice.Model.DTO.Movie;
 import com.dh.catalogservice.configuration.CustomLoadBalancerConfiguration;
@@ -16,6 +15,9 @@ import java.util.List;
 @FeignClient("movie-service")
 @LoadBalancerClient(name = "movie-service", configuration = CustomLoadBalancerConfiguration.class)
 public interface IMovie {
+        @GetMapping("/api/v1/movies")
+        ResponseEntity<List<Movie>> getAll();
+
         @GetMapping("/api/v1/movies/{genre}")
         ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre);
 
