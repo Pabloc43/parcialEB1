@@ -1,26 +1,25 @@
 package com.dh.catalogservice.Model.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Serie {
     private String id;
     private String name;
     private String genre;
     private List<Season> seasons = new ArrayList<>();
 
-    public String getId() {
-        return id;
-    }
-
+    @Data
     public static class Season {
         private Integer seasonNumber;
         private List<Chapter> chapters = new ArrayList<>();
 
-
+        @Data
         public static class Chapter {
 
             private String name;

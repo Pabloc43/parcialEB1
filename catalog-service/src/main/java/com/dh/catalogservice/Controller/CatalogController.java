@@ -19,23 +19,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/catalog")
-public class MovieController {
+public class CatalogController {
 
     @Autowired
     private IMovie movieClient;
     @Autowired
     private ISerie serieClient;
 
-    private static final Logger logger = LoggerFactory.getLogger(MovieController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
 
-    @GetMapping("/prueba")
-    public String prueba(){
-        return "prueba";
-    }
     @GetMapping("/movie/{genre}")
     public ResponseEntity<List<Movie>> getMoviesByGenre(@PathVariable String genre) {
         return movieClient.getMovieByGenre(genre);
-
     }
 
     @PostMapping("/movie/save")
@@ -48,23 +43,19 @@ public class MovieController {
         return movieClient.getAll();
     }
 
-    @GetMapping("/serie/test")
-    public ResponseEntity<String> test(){
-        return serieClient.test();
-    }
 
     @GetMapping("/serie")
-    public ResponseEntity<List<Serie>> getAllSeries() {
+    public List<Serie> getAllSeries() {
         return serieClient.getAll();
     }
 
     @GetMapping("/serie/{genre}")
-    public ResponseEntity<List<Serie>> getSeriesByGenre(@PathVariable String genre) {
+    public List<Serie> getSeriesByGenre(@PathVariable String genre) {
         return serieClient.getSerieByGenre(genre);
     }
 
     @PostMapping("/serie/save")
-    public ResponseEntity<Serie> create(@RequestBody Serie serie){
+    public String create(@RequestBody Serie serie){
         return serieClient.create(serie);
     }
 }

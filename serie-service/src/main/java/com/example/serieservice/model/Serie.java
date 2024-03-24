@@ -1,6 +1,5 @@
 package com.example.serieservice.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +22,6 @@ public class Serie {
     private String name;
     private String genre;
 
-    @JsonProperty("seasons")
     private List<Season> seasons = new ArrayList<>();
 
     public String getId() {
@@ -35,10 +33,8 @@ public class Serie {
     @Setter
     @Getter
     public static class Season {
-        @JsonProperty("seasonNumber")
         private Integer seasonNumber;
 
-        @JsonProperty("chapters")
         private List<Chapter> chapters = new ArrayList<>();
 
         @AllArgsConstructor
