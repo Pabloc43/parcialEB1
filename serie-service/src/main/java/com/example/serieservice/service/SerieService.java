@@ -2,6 +2,7 @@ package com.example.serieservice.service;
 
 import com.example.serieservice.model.Serie;
 import com.example.serieservice.repository.SerieRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class SerieService {
     public SerieService(SerieRepository repository) {
         this.repository = repository;
     }
+
 
     public List<Serie> getAll() {
         return repository.findAll();

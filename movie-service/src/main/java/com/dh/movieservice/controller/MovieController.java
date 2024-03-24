@@ -19,8 +19,8 @@ public class MovieController {
     }
 
     @GetMapping
-    public List<Movie> getAll() {
-        return movieService.getAll();
+    public List<Movie> findAll(@RequestParam(defaultValue = "false") Boolean throwError) {
+        return movieService.findAll(throwError);
     }
 
     @GetMapping("/{genre}")

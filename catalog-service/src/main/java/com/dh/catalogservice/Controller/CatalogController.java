@@ -39,10 +39,9 @@ public class CatalogController {
     }
 
     @GetMapping("/movie")
-    public ResponseEntity<List<Movie>> getAllMovies() {
-        return movieClient.getAll();
+    public List<Movie> getAllMovies(@RequestParam(defaultValue = "false") Boolean throwError) {
+        return movieClient.findAll(throwError);
     }
-
 
     @GetMapping("/serie")
     public List<Serie> getAllSeries() {
