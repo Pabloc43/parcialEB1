@@ -7,12 +7,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RefreshScope
 @RestController
 @RequestMapping("/api/v1/movies")
 public class MovieController {
     private final MovieService movieService;
+
+    private static java.util.logging.Logger log = Logger.getLogger(MovieController.class.getName());
 
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
@@ -30,6 +33,7 @@ public class MovieController {
 
     @PostMapping("/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+        log.info("Saving movie");
         return ResponseEntity.ok().body(movieService.save(movie));
     }
 }

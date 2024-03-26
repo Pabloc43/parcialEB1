@@ -7,11 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RefreshScope
 @RestController
 @RequestMapping("/api/v1/series")
 public class SerieController {
+    private static java.util.logging.Logger log = Logger.getLogger(SerieController.class.getName());
 
     private final SerieService serieService;
 
@@ -19,13 +21,9 @@ public class SerieController {
         this.serieService = serieService;
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "test";
-    }
-
     @GetMapping
     public List<Serie> getAll() {
+        log.info("Getting all series");
         return serieService.getAll();
     }
 

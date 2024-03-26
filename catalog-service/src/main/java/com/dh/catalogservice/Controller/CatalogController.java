@@ -55,6 +55,7 @@ public class CatalogController {
 
     @PostMapping("/serie/save")
     public String create(@RequestBody Serie serie){
+        logger.info("Creating serie");
         return serieClient.create(serie);
     }
 }
