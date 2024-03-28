@@ -1,6 +1,7 @@
 package com.dh.movieservice.controller;
 
 import com.dh.movieservice.model.Movie;
+import com.dh.movieservice.queue.MovieSender;
 import com.dh.movieservice.service.MovieService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,13 @@ import java.util.logging.Logger;
 public class MovieController {
     private final MovieService movieService;
 
+    private final MovieSender senderMovie;
+
     private static java.util.logging.Logger log = Logger.getLogger(MovieController.class.getName());
 
-    public MovieController(MovieService movieService) {
+    public MovieController(MovieService movieService, MovieSender movieSerie, MovieSender senderMovie) {
         this.movieService = movieService;
+        this.senderMovie = senderMovie;
     }
 
     @GetMapping
@@ -34,6 +38,7 @@ public class MovieController {
     @PostMapping("/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         log.info("Saving movie");
+        senderMovie.send(movie);
         return ResponseEntity.ok().body(movieService.save(movie));
     }
 }

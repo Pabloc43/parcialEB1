@@ -1,6 +1,7 @@
 package com.example.serieservice.controller;
 
 import com.example.serieservice.model.Serie;
+import com.example.serieservice.queue.SerieSender;
 import com.example.serieservice.service.SerieService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,11 @@ public class SerieController {
 
     private final SerieService serieService;
 
-    public SerieController(SerieService serieService) {
+    private final SerieSender senderSerie;
+
+    public SerieController(SerieService serieService, SerieSender senderSerie) {
         this.serieService = serieService;
+        this.senderSerie = senderSerie;
     }
 
     @GetMapping
@@ -36,6 +40,7 @@ public class SerieController {
     @ResponseStatus(HttpStatus.CREATED)
     public String saveSerie(@RequestBody Serie serie) {
         serieService.save(serie);
+        senderSerie.send(serie);
         return serie.getId();
     }
 }
